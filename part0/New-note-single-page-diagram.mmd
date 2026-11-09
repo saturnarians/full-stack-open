@@ -1,0 +1,17 @@
+%% 0.6: New note in Single page app diagram
+sequenceDiagram
+    autonumber
+    actor User
+    participant Browser
+    participant Server
+
+    User->>Browser: Type note text and click "Save" button
+    Note right of Browser: JS code handles submit event, prevents default form submit,<br/>adds note locally to notes array, and rerenders the notes list
+
+    Browser->>Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    Note over Browser,Server: Headers: Content-Type: application/json<br/>Body: {"content": "New note text", "date": "2026-11-09"}
+    activate Server
+    Server-->>Browser: 201 Created {"message": "note created"}
+    deactivate Server
+
+    Note right of Browser: No page reload or secondary data fetch required

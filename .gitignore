@@ -1,1 +1,4 @@
 *snyk-win.exe
+node_modules/
+dist/
+build/    

@@ -2,7 +2,7 @@ import React from 'react'
 
 function Total() {
   return (
-    <div>Total</div>
+    <div>Total:</div>
   )
 }
 

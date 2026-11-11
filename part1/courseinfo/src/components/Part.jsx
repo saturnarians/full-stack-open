@@ -1,9 +1,10 @@
 import React from 'react'
+function Part(props) {
+  console.log('Part.jsx props:', props);
 
-function Part() {
   return (
     <div>
-        Part
+        {props.part} {props.exercises}
     </div>
   )
 }
